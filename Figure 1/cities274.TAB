@@ -1,0 +1,10 @@
+!table
+!version 450
+!charset WindowsLatin1
+
+Definition Table
+  Type XLS Titles Range "Sheet1!A2:C275"
+  Fields 3
+    longitude Float ;
+    latitude Float ;
+    mortality Float ;

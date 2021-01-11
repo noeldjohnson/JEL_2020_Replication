@@ -1,0 +1,18 @@
+!table
+!version 700
+!charset WindowsLatin1
+
+Definition Table
+  Type NATIVE Charset "WindowsLatin1"
+  Fields 11
+    F_code Char (5) ;
+    Nam Char (254) ;
+    Na2 Char (2) ;
+    Na2_descri Char (254) ;
+    Na3 Char (1) ;
+    Na3_descri Char (254) ;
+    Area Decimal (20, 3) ;
+    Perimeter Decimal (20, 3) ;
+    Wfbpathlnk Char (24) ;
+    Wfbpath_ag Char (50) ;
+    Cia_fbweb Char (64) ;

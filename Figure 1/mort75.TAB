@@ -1,0 +1,13 @@
+!table
+!version 450
+!charset WindowsLatin1
+
+Definition Table
+  Type NATIVE Charset "WindowsLatin1"
+  Fields 6
+    city_jjk Char (21) ;
+    city_id Float ;
+    countryname Char (14) ;
+    longitude Float ;
+    latitude Float ;
+    mortality Float Index 1 ;

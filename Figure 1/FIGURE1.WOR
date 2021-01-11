@@ -1,0 +1,72 @@
+!Workspace
+!Version 600
+!Charset WindowsLatin1
+Open Table "country_boundaries" As country_boundaries Interactive
+Open Table "cities274" As cities274 Interactive
+Open Table "mort75" As mort75 Interactive
+Select *  from country_boundaries  where Nam = "TUNISIA"  into Query2 noselect  
+Select *  from country_boundaries  where Nam = "UNK"  into Query4 noselect  
+Select *  from country_boundaries  where Na2_descri = "Finland"  into Query6 noselect  
+Select *  from cities274  where mortality >= 75  into Query7 noselect  
+Map From mort75,cities274,country_boundaries 
+  Position (0.0520833,0.0520833) Units "in"
+  Width 9.84375 Units "in" Height 9.38542 Units "in" 
+Set Window FrontWindow() ScrollBars Off Autoscroll On
+Set Map
+  CoordSys Earth Projection 1, 0
+  Center (0.09213506759,47.97204133)
+  Zoom 1739.483359 Units "mi"
+  Preserve Zoom Display Zoom
+  Distance Units "mi" Area Units "sq mi" XY Units "degree"
+shade 2 with mortality ranges apply all use all Symbol (183,16777215,13,"Symbol",16,0) 
+  0: 25 Symbol (183,16777215,13,"Symbol",16,0) ,
+  25: 50 Symbol (43,16777215,14,"Symbol",17,0) ,
+  50: 75 Symbol (43,6974058,15,"Symbol",17,0) ,
+  75: 100 Symbol (46,8421504,1,"Symbol",0,0) 
+  default Symbol (35,16777215,4) 
+  # use 2 round 1 inflect off Symbol (35,16777215,4) at 2 by 0 color 1 # 
+Set Map
+  Layer 1
+    Display Global
+    Global Pen (1,2,0)  Brush (2,16777215,16777215)  Symbol (134,0,21,"Wingdings 2",257,0)  Line (1,2,0)  Font ("Arial",0,9,0)
+    Label Line Arrow Position Right Font ("Arial",0,9,0) Pen (1,2,0) 
+      With city_jjk
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 2
+    Display Value
+    Global Pen (1,2,0)  Brush (2,16777215,16777215)  Symbol (35,0,12)  Line (1,2,0)  Font ("Arial",0,9,0)
+    Selectable Off
+  Layer 3
+    Display Graphic
+    Global Pen (1,2,0)  Brush (2,16777215,16777215)  Symbol (35,0,12)  Line (1,2,0)  Font ("Arial",0,9,0)
+    Label Line Arrow Position Right Font ("Arial",0,9,0) Pen (1,2,0) 
+      With city_jjk
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 4
+    Display Global
+    Global Pen (2,2,8421504)  Brush (2,16777215,16777215)  Symbol (35,0,12)  Line (1,2,0)  Font ("Arial",0,9,0)
+    Label Line None Position Center Font ("Arial",0,9,0) Pen (1,2,0) 
+      With F_code
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+set legend 
+  layer 2 
+    display on 
+    shades off 
+    symbols on 
+    lines off 
+    count off 
+    title auto Font ("Arial",0,9,0)
+    subtitle auto Font ("Arial",0,8,0)
+    ascending off 
+    ranges Font ("Arial",0,8,0)
+      auto display off ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on  
+Set Window FrontWindow() Printer
+ Name "HPFE5F1D.hsd1.va.comcast.net. (HP ENVY 5000 series)" Orientation Portrait Copies 1
+ Papersize 1
